@@ -6,3 +6,4 @@ La SecretKey debe ser previamente acordada por los usuarios.
 
 
  
+ ![alt text](https://raw.githubusercontent.com/nicolaslema2710/HideMyTextExtension/master/guia.jpg)
