@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="popup.js"></script>
+  <script src="eventPage.js"></script>
+  <script src="background.js"></script>
+  <script src="hidemytext.js"></script>
+  <script  src="js/sketch.min.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body class="fondo ">
+	<div class="container">
+	<h2  class="text-light text-center fontBig fontLobster ">HideMyText <img src="img/camera.png" alt="" style="height: 40px; width: 40px;"></h2>
+
+  <!-- BUTTONS -->
+<!-- ///////////////////////////////// -->
+<div class="btn-group text-center my-1" role="group" aria-label="Basic example">
+  <button  id="btnFacebook" type="button" class="btn bg text-light" "><img src="img/key.png" alt="">1</button>
+  <button id="btnTwitter" class="btn bg text-light "> <img src="img/key.png" alt="">2</button>
+  <button id="btnGmail" class="btn bg text-light "> <img src="img/key.png" alt="">3</button>
+  <button id="btnOutlook" class="btn bg text-light "> <img src="img/key.png" alt="">4</button>
+</div>
+
+  <!-- FORM -->
+<!-- ///////////////////////////////// -->
+	<form class="form my-4">
+  <div class="form-group mx-sm-5 mb-2">
+    <label for="inputKey" id="SecretKey" class="sr-only fontLexend">SecretKey</label>
+
+
+    <input id="inputKey" type="text"  class="form-control bg text-center"  placeholder="Secretkey">
+
+
+  </div>
+  <button id="setkeyBtn" type="button" class="btn btn-success mb-2 btn-block fontLexend text-light"  value="SetKey">Get Key</button>
+
+  <button id="runBtn" type="button" class="btn btn-primary mb-2 btn-block fontLexend" >Set Key</button>
+</form>
+<a href="users.html" class="btn btn-outline-info btn-block  fontLexend mb-2" role="button">Passwords Vault</a>
+
+	</div>
+  <!-- FOOTER -->
+<!-- ///////////////////////////////// -->
+<p class="bg text-light text-center fontSmall fontLexend">Nicolas Lema, Juan Morello, Lautaro Iborra</p>
+
+<p id="testinput" class="text-light"></p>
+
+<div  class="container mb-2">
+	<p  href="#" class="bg text-light text-center  fontSmall" >https://github.com/nicolaslema2710/HideMyTextExtension</p>
+</div>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+
+</body>
+</html>

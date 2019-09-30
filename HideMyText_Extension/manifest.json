@@ -1,0 +1,45 @@
+{
+  "name": "HideMyText",
+  "version": "0.0.2",
+  "manifest_version": 2,
+  "commands": {
+    "toggle-feature-foo": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+5"
+      },
+      "description": "Toggle feature foo",
+      "global": true
+    }
+  },
+  "permissions": [
+    "storage",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "HideMyText!",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "img/camera.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        
+        "https://mail.google.com/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "hidemytext.js",
+        "jquery-3.4.1.min.js",
+        "lib.js",
+        "popup.js"
+      ]
+    }
+  ]
+}
