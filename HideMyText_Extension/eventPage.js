@@ -6,8 +6,6 @@ window.onload = function () {
 	var btnSetKey = document.getElementById('setkeyBtn');
 	var btnRun = document.getElementById('runBtn');
 
-	
-
 	btnFacebook.addEventListener('click', function (event) {
 		chrome.storage.local.get(['facebookKey'], function (data) {
 			inputKey.value = data.facebookKey;
@@ -28,27 +26,15 @@ window.onload = function () {
 			inputKey.value = data.outlookKey;
 		});
 	});
-
-
 	btnSetKey.addEventListener('click', function(event){
 		chrome.storage.local.get(['secretKey'], function(data){
 			inputKey.value = data.secretKey;
-
 		});
 	});
-
-
 	btnRun.addEventListener('click', function(event){
 		var valueSecretKey = document.getElementById('inputKey').value;
-		chrome.storage.local.set({ 'secretKey': valueSecretKey }, function () { 
-			
+		chrome.storage.local.set({ 'secretKey': valueSecretKey }, function () { 		
 		});
 	});
-
-
-
-
-
-
 	
 }

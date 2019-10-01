@@ -1,6 +1,4 @@
 window.onload = function () {
-
-	
 	document.getElementById('save').onclick = function () {
 		var valueFacebook = document.getElementById('inputFacebook').value;
 		var valueTwitter = document.getElementById('inputTwitter').value;
@@ -11,8 +9,6 @@ window.onload = function () {
 		chrome.storage.local.set({ 'gmailKey': valueGmail }, function () { });
 		chrome.storage.local.set({ 'outlookKey': valueOutlook }, function () { });
 	}
-
-
 	chrome.storage.local.get(['facebookKey'], function (data) {
 		inputFacebook.value = data.facebookKey;
 	});

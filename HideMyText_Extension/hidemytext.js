@@ -17,9 +17,7 @@ hideMyText = (function () {
     }
 
     function saveKey(key) {
-        if (key) {
-            this.key = key;
-        }
+        if (key) {this.key = key;}
     }
 
     function getKey() {
@@ -37,14 +35,11 @@ hideMyText = (function () {
         return decryptedMessage;
     }
 
-
     function setKey(){
         chrome.storage.local.get(['secretKey'], function (data) {
         this.key = data.secretKey;
     });
     }
-
-
     return {
         encrypt: encryptMessage,
         decrypt: decryptMessage,
@@ -62,23 +57,15 @@ function wordSelected(htmlElement) {
     if(key==""){
         console.dir('set secretkey please!');    
     }
-    // Detectar si tiene una encriptación nuestra. En caso contrario, encriptar
     if (selectedText.indexOf(hideMyText.keyWord) != -1){
-        // Acá ya sabemos que tenemos que desencriptar
         var toDecrypt = selectedText.substring(hideMyText.keyWord.length, selectedText.length);
         var decrypted = hideMyText.decrypt(toDecrypt, key);
         htmlElement.innerHTML = decrypted;
     } else {
-        // Acá tenemos que encriptarle la madre
         const encryptedText = hideMyText.encrypt(selectedText, key);
         htmlElement.innerHTML = encryptedText;
         htmlElement.innerText = encryptedText;
         htmlElement.textContent = encryptedText;
-
-        // triggerear el .onChange || fakear un borrado y pegado
-        console.dir(htmlElement);
-        console.dir(key);
-        console.dir(encryptedText);
         
        
     }
@@ -90,15 +77,6 @@ function wordSelected(htmlElement) {
 
 
 
-    /*
-    console.log('without crypt');
-    console.log(selectedText);
-    console.log('key');
-    console.log(hideMyText.getKey());
-    console.log('with crypt');
-    console.log(hideMyText.encrypt(selectedText, hideMyText.getKey()));
-
-     */
 }
 
 
